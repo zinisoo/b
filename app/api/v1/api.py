@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.v1.endpoints import users, detection, reports
+from app.api.v1.endpoints import users, detection, reports, registration
 
 api_router = APIRouter()
 
@@ -7,3 +7,4 @@ api_router = APIRouter()
 api_router.include_router(users.router, prefix="/users", tags=["users"])
 api_router.include_router(detection.router, prefix="/detection", tags=["detection"])
 api_router.include_router(reports.router, prefix="/reports", tags=["reports"])
+api_router.include_router(registration.router, prefix="/registration", tags=["registration"])
